@@ -1,0 +1,13 @@
+branches:
+  - label: enhancement
+    name: develop
+    prefix: feature/${issue.user.login}/
+  - label: bug
+    name: develop
+    prefix: bugfix/${issue.user.login}/
+  - label: maintenance
+    name: develop
+    prefix: maintenance/${issue.user.login}/
+  - label: setup
+    name: develop
+    prefix: setup/${issue.user.login}/
