@@ -8,6 +8,11 @@
     <version>211.0000-SNAPSHOT</version>
 
     <modules>
+        <module>backend</module>
+        <module>docker</module>
+        <module>flyway</module>
+        <module>frontend</module>
+        <module>jooq</module>
     </modules>
 
     <properties>
