@@ -1,0 +1,11 @@
+language: java
+sudo: true
+install: true
+jdk:
+  - openjdk14
+
+jobs:
+  include:
+    - stage: build
+      script:
+        - echo "initial build"
