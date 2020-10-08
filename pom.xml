@@ -1,0 +1,28 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ch.toubidev</groupId>
+    <artifactId>mybudget-root</artifactId>
+    <packaging>pom</packaging>
+    <version>211.0000-SNAPSHOT</version>
+
+    <modules></modules>
+
+    <properties>
+        <!-- General Build Setting -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <java.jdk.version>11</java.jdk.version>
+        <maven.compiler.release>${java.jdk.version}</maven.compiler.release>
+        <maven.compiler.source>${java.jdk.version}</maven.compiler.source>
+        <maven.compiler.target>${java.jdk.version}</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement></dependencyManagement>
+
+    <build>
+    </build>
+</project>
