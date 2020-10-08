@@ -3,11 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ch.toubidev</groupId>
-    <artifactId>mybudget-root</artifactId>
+    <artifactId>root</artifactId>
     <packaging>pom</packaging>
     <version>211.0000-SNAPSHOT</version>
 
-    <modules></modules>
+    <modules>
+    </modules>
 
     <properties>
         <!-- General Build Setting -->
