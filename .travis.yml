@@ -8,4 +8,4 @@ jobs:
   include:
     - stage: build
       script:
-        - echo "initial build"
+        - mvn clean install
