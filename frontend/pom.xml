@@ -1,20 +1,56 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
+  <artifactId>frontend</artifactId>
+
+  <parent>
     <groupId>ch.toubidev</groupId>
-    <artifactId>frontend</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>root</artifactId>
     <version>211.0000-SNAPSHOT</version>
+  </parent>
 
-    <modules>
-    </modules>
-
-    <properties>
-    </properties>
-
-    <dependencyManagement></dependencyManagement>
-
-    <build>
-    </build>
+  <build>
+    <resources>
+      <resource>
+        <directory>./dist/frontend</directory>
+        <targetPath>static</targetPath>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.10.3</version>
+        <configuration>
+          <workingDirectory>./</workingDirectory>
+          <nodeVersion>v12.16.2</nodeVersion>
+          <npmVersion>6.14.4</npmVersion>
+        </configuration>
+        <executions>
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>npm install</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>npm run build</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>run build</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
