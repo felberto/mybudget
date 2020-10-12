@@ -11,10 +11,9 @@ before_script:
   - psql -c "CREATE SCHEMA mybudget_appl;" -U postgres
 
 env:
-  global:
-    - MYBUDGET_DB_URL=jdbc:postgresql://localhost:5432/mybudget
-    - MYBUDGET_DB_USERNAME=postgres
-    - MYBUDGET_DB_PASSWORD=
+  - MYBUDGET_DB_URL=jdbc:postgresql://localhost:5432/mybudget
+  - MYBUDGET_DB_USERNAME=postgres
+  - MYBUDGET_DB_PASSWORD=
 
 jobs:
   include:
