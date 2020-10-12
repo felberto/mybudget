@@ -7,9 +7,8 @@ services:
   - postgresql
 
 before_script:
-  - psql -c "CREATE USER mybudget_appl WITH PASSWORD 'mybudget_appl';"
-  - psql -c "ALTER ROLE mybudget_appl SUPERUSER;"
-  - psql -c "CREATE DATABASE mybudget;" -U mybudget_appl
+  - psql -c "CREATE DATABASE mybudget;" -U postgres
+  - psql -c "ALTER USER mybudget_appl WITH PASSWORD 'mybudget_appl';" -U mybudget_appl
   - psql -c "CREATE SCHEMA mybudget_appl;" -U mybudget_appl
 
 env:
