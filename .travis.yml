@@ -8,14 +8,13 @@ services:
 
 before_script:
   - psql -c "CREATE DATABASE mybudget;" -U postgres
-  - psql -c "ALTER USER CURRENT_USER WITH PASSWORD 'mybudget_appl'" -U mybudget_appl;
-  - psql -c "CREATE SCHEMA mybudget_appl;" -U mybudget_appl
+  - psql -c "CREATE SCHEMA mybudget_appl;" -U postgres
 
 env:
   global:
     - MYBUDGET_DB_URL=jdbc:postgresql://localhost:5432/mybudget
-    - MYBUDGET_DB_USERNAME=mybudget_appl
-    - MYBUDGET_DB_PASSWORD=mybudget_appl
+    - MYBUDGET_DB_USERNAME=postgres
+    - MYBUDGET_DB_PASSWORD=
 
 jobs:
   include:
