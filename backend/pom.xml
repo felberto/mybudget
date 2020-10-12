@@ -93,6 +93,7 @@
                     <url>${env.MYBUDGET_DB_URL}</url>
                     <user>${env.MYBUDGET_DB_USERNAME}</user>
                     <password>${env.MYBUDGET_DB_PASSWORD}</password>
+                    <schemas>mybudget_appl</schemas>
                 </configuration>
                 <executions>
                     <execution>
