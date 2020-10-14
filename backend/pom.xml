@@ -143,6 +143,7 @@
             </build>
         </profile>
         <profile>
+            <!-- TODO in eigenes maven module packen -->
             <id>jooq-generator</id>
             <build>
                 <plugins>
