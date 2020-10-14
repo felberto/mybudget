@@ -3,9 +3,24 @@ sudo: true
 install: true
 jdk:
   - openjdk14
+services:
+  - postgresql
+
+before_script:
+  - psql -c "CREATE DATABASE mybudget;" -U postgres
+  - psql -c "CREATE SCHEMA mybudget_appl;" -U postgres
+
+env:
+  global:
+    - MYBUDGET_DB_URL=jdbc:postgresql://localhost:5432/mybudget
+    - MYBUDGET_DB_USERNAME=postgres
+    - MYBUDGET_DB_PASSWORD=
 
 jobs:
   include:
     - stage: build
       script:
         - mvn clean install
+
+after_script:
+  - psql -c "DROP DATABASE mybudget;" -U postgres
