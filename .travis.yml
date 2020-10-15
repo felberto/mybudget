@@ -20,7 +20,12 @@ jobs:
   include:
     - stage: build
       script:
-        - mvn clean install -Pflyway
+        - mvn clean install
+    - stage: flyway
+      script:
+        - cd backend
+        - mvn clean package
+        - mvn generate-resources -Pflyway
 
 after_script:
   - psql -c "DROP DATABASE mybudget;" -U postgres
