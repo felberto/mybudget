@@ -1,14 +1,13 @@
-ARTEFACT    := $(shell cat ${TRAVIS_BUILD_DIR}/build.properties | awk -F= '/build.artifactId/ {print $$2}')
-VERSION     := $(shell cat ${TRAVIS_BUILD_DIR}/build.properties | awk -F= '/build.version/ {print $$2}')
-GIT         := $(shell cat ${TRAVIS_BUILD_DIR}/build.properties | awk -F= '/build.git.commit/ {print $$2}')
+ARTEFACT    := $(shell cat ${TRAVIS_BUILD_DIR}/backend/target/classes/build.properties | awk -F= '/build.artifactId/ {print $$2}')
+VERSION     := $(shell cat ${TRAVIS_BUILD_DIR}/backend/target/classes/build.properties | awk -F= '/build.version/ {print $$2}')
+GIT         := $(shell cat ${TRAVIS_BUILD_DIR}/backend/target/classes/build.properties | awk -F= '/build.git.commit/ {print $$2}')
 DOCKER_REPO := mybudget
 NAME        := ${DOCKER_USERNAME}/${DOCKER_REPO}
 IMG_TAG     := ${NAME}:${VERSION}-${TRAVIS_BUILD_NUMBER}-${GIT}
 RELEASE_TAG := ${VERSION}-${TRAVIS_BUILD_NUMBER}
 
 prepare:
-	ls ${TRAVIS_BUILD_DIR}
-	cp ${TRAVIS_BUILD_DIR}/backend-211.0000.jar ./
+	cp ${TRAVIS_BUILD_DIR}/backend/target/backend-211.0000.jar ./
 
 build:
 	docker build -t ${IMG_TAG} .
