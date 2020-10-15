@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.com/felberto/mybudget.svg?branch=release)](https://travis-ci.com/felberto/mybudget)
 
 # MyBudget
+This application helps to keep an eye on the inputs and outputs, to create and manage budgets
 
 ###Components
 | Component                         |                        |
@@ -38,3 +39,6 @@ set environment variables for database
 #####Run application
 ```java -jar backend/target/backend-[VERSION].jar```
 
+After the start the following url are available  
+[Swagger UI](localhost:8080/swagger-ui.html)  
+[Angular GUI](localhost:8080/gui)
