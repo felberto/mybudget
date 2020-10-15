@@ -27,7 +27,7 @@ jobs:
       script:
         - mvn clean install -DskipTests
         - cd docker
-        - make
+        - make prepare
         - make build
         - make push
 
