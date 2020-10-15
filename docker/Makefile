@@ -7,7 +7,7 @@ IMG_TAG     := ${NAME}:${VERSION}-${TRAVIS_BUILD_NUMBER}-${GIT}
 RELEASE_TAG := ${VERSION}-${TRAVIS_BUILD_NUMBER}
 
 prepare:
-	cp ../backend/target/backend-211.0000.jar ./
+	cp ${$TRAVIS_BUILD_DIR}/backend-211.0000.jar ./
 
 build:
 	docker build -t ${IMG_TAG} .
