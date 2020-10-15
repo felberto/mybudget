@@ -5,6 +5,7 @@ jdk:
   - openjdk14
 services:
   - postgresql
+  - docker
 
 before_script:
   - psql -c "CREATE DATABASE mybudget;" -U postgres
@@ -18,9 +19,15 @@ env:
 
 jobs:
   include:
-    - stage: build
+    #- stage: build
+    #  script:
+    #    - mvn clean install -Pflyway
+    - stage: build docker
+      #if: branch = master
       script:
-        - mvn clean install -Pflyway
+        - mvn clean install -DskipTests
+        - cd docker
+        - make
 
 after_script:
   - psql -c "DROP DATABASE mybudget;" -U postgres

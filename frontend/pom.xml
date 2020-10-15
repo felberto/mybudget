@@ -7,7 +7,7 @@
   <parent>
     <groupId>ch.toubidev</groupId>
     <artifactId>root</artifactId>
-    <version>211.0000-SNAPSHOT</version>
+    <version>211.0000</version>
   </parent>
 
   <build>

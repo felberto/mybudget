@@ -5,7 +5,7 @@
     <groupId>ch.toubidev</groupId>
     <artifactId>root</artifactId>
     <packaging>pom</packaging>
-    <version>211.0000-SNAPSHOT</version>
+    <version>211.0000</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
