@@ -13,7 +13,7 @@ build:
 	git config --global user.email "travis@travis-ci.org"
 	git config --global user.name "Travis CI"
 	git tag ${RELEASE_TAG} -a -m "Tagging version ${RELEASE_TAG}"
-	git remote add origin https://${GH_TOKEN}@github.com/felberto/mybudget.git > /dev/null 2>&1
+	git remote add origin https://${GH_TOKEN}@github.com/felberto/mybudget.git
 	git push origin ${TRAVIS_BRANCH} --tags
 
 push:
