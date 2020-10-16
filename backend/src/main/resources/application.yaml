@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${MYBUDGET_DB_URL}
+    username: ${MYBUDGET_DB_USERNAME}
+    password: ${MYBUDGET_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      auto-commit: false
+      maximumPoolSize: 100
+    jooq:
+      sqlDialect: POSTGRESQL
+  flyway:
+    enabled: true
+    validate-on-migrate: true
+    url: ${MYBUDGET_DB_URL}
+    password: ${MYBUDGET_DB_PASSWORD}
+    user: ${MYBUDGET_DB_USERNAME}
+    schemas: mybudget_appl
+
+mybudget:
+  build:
+    artifactId: "${project.artifactId}"
+    version: "${project.version}"
+    timestamp: "${timestamp}"
+    gitCommit: "${buildNumber}"
