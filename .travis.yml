@@ -19,7 +19,7 @@ env:
 
 jobs:
   include:
-    - stage: build
+    - stage: build and migrate
       script:
         - mvn clean install -Pflyway
     - stage: build docker
