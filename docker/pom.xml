@@ -5,16 +5,5 @@
     <groupId>ch.toubidev</groupId>
     <artifactId>docker</artifactId>
     <packaging>pom</packaging>
-    <version>211.0000-SNAPSHOT</version>
-
-    <modules>
-    </modules>
-
-    <properties>
-    </properties>
-
-    <dependencyManagement></dependencyManagement>
-
-    <build>
-    </build>
+    <version>211.0000</version>
 </project>
