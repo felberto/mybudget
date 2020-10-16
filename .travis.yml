@@ -19,11 +19,11 @@ env:
 
 jobs:
   include:
-    #- stage: build
-    #  script:
-    #    - mvn clean install -Pflyway
+    - stage: build
+      script:
+        - mvn clean install -Pflyway
     - stage: build docker
-      #if: branch = master
+      if: branch = master
       script:
         - mvn clean install -DskipTests
         - cd docker

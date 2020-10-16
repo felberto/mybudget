@@ -2,7 +2,7 @@ VERSION     := $(shell cat ${TRAVIS_BUILD_DIR}/backend/target/classes/build.prop
 DOCKER_REPO := mybudget
 NAME        := ${DOCKER_USERNAME}/${DOCKER_REPO}
 IMG_TAG     := ${NAME}:${VERSION}-${TRAVIS_BUILD_NUMBER}
-RELEASE_TAG := ${VERSION}-${TRAVIS_BUILD_NUMBER}
+RELEASE_TAG := ${VERSION}.${TRAVIS_BUILD_NUMBER}
 
 prepare:
 	cp ${TRAVIS_BUILD_DIR}/backend/target/backend-211.0000.jar ./
