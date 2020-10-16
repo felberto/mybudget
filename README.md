@@ -3,7 +3,7 @@
 # MyBudget
 This application helps to keep an eye on the inputs and outputs, to create and manage budgets
 
-###Components
+### Components
 | Component                         |                        |
 |:----------------------------------|:-----------------------|
 | [Backend](./backend/readme.md)    | Java/Spring Boot       |
@@ -12,15 +12,15 @@ This application helps to keep an eye on the inputs and outputs, to create and m
 
 ---
 
-###Setup
+### Setup
 
-#####Install database
+##### Install database
 Download [postgres database](https://www.postgresql.org/download/) and install
 
-#####Initialize database
+##### Initialize database
 Create user and schema mybudget_appl
 
-#####Set environment variable
+##### Set environment variable
 set environment variables for database
 - MYBUDGET_DB_URL = jdbc:postgresql://[HOST]:[PORT]/[DATABASE_NAME]
 - MYBUDGET_DB_USERNAME = [USERNAME]
@@ -28,15 +28,15 @@ set environment variables for database
 
 ---
 
-###Build and run application
+### Build and run application
 
-#####Build application
+##### Build application
 ```mvn clean install```
 
-#####Build application without tests
+##### Build application without tests
 ```mvn clean install -DskipTests```
 
-#####Run application
+##### Run application
 ```java -jar backend/target/backend-[VERSION].jar```
 
 After the start the following url are available  

@@ -23,10 +23,7 @@ jobs:
       script:
         - mvn clean install -Pflyway
     - stage: build docker
-      branches:
-        only:
-          - release
-      if: $TRAVIS_PULL_REQUEST = "false"
+      if: $TRAVIS_PULL_REQUEST = "false" AND branch = release
       script:
         - mvn clean install -DskipTests
         - cd docker
