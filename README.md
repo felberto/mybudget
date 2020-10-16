@@ -40,5 +40,5 @@ set environment variables for database
 ```java -jar backend/target/backend-[VERSION].jar```
 
 After the start the following url are available  
-[Swagger UI](localhost:8080/swagger-ui.html)  
-[Angular GUI](localhost:8080/gui)
+[SwaggerUI](localhost:8080/swagger-ui.html)  
+[AngularUI](localhost:8080/gui)
