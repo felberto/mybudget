@@ -1,9 +1,9 @@
-#MyBudget Backend
+# MyBudget Backend
 
-#####Run flyway
+##### Run flyway
 ```mvn generate-resources -Pflyway```
 
 Flyway also runs with the start of the backend
 
-#####Run jooq
+##### Run jooq
 ```mvn generate-resources -Pjooq-generator```

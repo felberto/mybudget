@@ -21,7 +21,7 @@ Download [postgres database](https://www.postgresql.org/download/) and install
 Create user and schema mybudget_appl
 
 ##### Set environment variable
-set environment variables for database
+Set environment variables for database
 - MYBUDGET_DB_URL = jdbc:postgresql://[HOST]:[PORT]/[DATABASE_NAME]
 - MYBUDGET_DB_USERNAME = [USERNAME]
 - MYBUDGET_DB_PASSWORD = [PASSWORD]
