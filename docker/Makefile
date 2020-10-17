@@ -1,7 +1,7 @@
 VERSION     := $(shell cat ${TRAVIS_BUILD_DIR}/backend/target/classes/build.properties | awk -F= '/build.version/ {print $$2}')
 DOCKER_REPO := mybudget
 NAME        := ${DOCKER_USERNAME}/${DOCKER_REPO}
-IMG_TAG     := ${NAME}:${VERSION}-${TRAVIS_BUILD_NUMBER}
+IMG_TAG     := ${NAME}:${VERSION}.${TRAVIS_BUILD_NUMBER}
 RELEASE_TAG := ${VERSION}.${TRAVIS_BUILD_NUMBER}
 
 prepare:
