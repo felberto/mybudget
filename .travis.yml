@@ -1,6 +1,8 @@
 language: java
 sudo: true
 install: true
+arch:
+  - arm64
 jdk:
   - openjdk14
 services:
