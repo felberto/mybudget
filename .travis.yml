@@ -1,9 +1,9 @@
 language: java
-sudo: required
 install: true
 arch:
   - arm64
 os: linux
+sudo: required
 jdk:
   - openjdk14
 services:
