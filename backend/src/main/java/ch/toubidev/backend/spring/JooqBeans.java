@@ -24,7 +24,7 @@ import javax.sql.DataSource;
 @Configuration
 public class JooqBeans {
 
-    @Value("${spring.datasource.jooq.sqlDialect}")
+    @Value("${spring.jooq.sqlDialect}")
     private String dataSourceDialect;
 
     @Bean

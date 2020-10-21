@@ -10,8 +10,8 @@ spring:
     hikari:
       auto-commit: false
       maximumPoolSize: 100
-    jooq:
-      sqlDialect: POSTGRESQL
+  jooq:
+    sqlDialect: POSTGRES
   flyway:
     enabled: true
     validate-on-migrate: true
