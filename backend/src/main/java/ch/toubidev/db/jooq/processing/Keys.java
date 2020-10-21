@@ -5,7 +5,9 @@ package ch.toubidev.db.jooq.processing;
 
 
 import ch.toubidev.db.jooq.processing.tables.Category;
+import ch.toubidev.db.jooq.processing.tables.User;
 import ch.toubidev.db.jooq.processing.tables.records.CategoryRecord;
+import ch.toubidev.db.jooq.processing.tables.records.UserRecord;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.Internal;
@@ -28,6 +30,7 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     public static final UniqueKey<CategoryRecord> CATEGORY_PKEY = UniqueKeys0.CATEGORY_PKEY;
+    public static final UniqueKey<UserRecord> USER_PKEY = UniqueKeys0.USER_PKEY;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -40,5 +43,6 @@ public class Keys {
 
     private static class UniqueKeys0 {
         public static final UniqueKey<CategoryRecord> CATEGORY_PKEY = Internal.createUniqueKey(Category.CATEGORY, "category_pkey", new TableField[]{Category.CATEGORY.ID}, true);
+        public static final UniqueKey<UserRecord> USER_PKEY = Internal.createUniqueKey(User.USER, "user_pkey", new TableField[]{User.USER.ID}, true);
     }
 }

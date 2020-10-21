@@ -26,3 +26,7 @@ mybudget:
     version: "${project.version}"
     timestamp: "${timestamp}"
     gitCommit: "${buildNumber}"
+  app:
+    #todo hide secret key, environment variable
+    jwtSecret: appSecretKey
+    jwtExpirationMs: 86400000

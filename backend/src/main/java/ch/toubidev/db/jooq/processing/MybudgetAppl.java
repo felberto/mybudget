@@ -5,6 +5,7 @@ package ch.toubidev.db.jooq.processing;
 
 
 import ch.toubidev.db.jooq.processing.tables.Category;
+import ch.toubidev.db.jooq.processing.tables.User;
 import org.jooq.Catalog;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
@@ -19,15 +20,22 @@ import java.util.List;
 @SuppressWarnings({"all", "unchecked", "rawtypes"})
 public class MybudgetAppl extends SchemaImpl {
 
+    private static final long serialVersionUID = 1748488532;
+
     /**
      * The reference instance of <code>mybudget_appl</code>
      */
     public static final MybudgetAppl MYBUDGET_APPL = new MybudgetAppl();
-    private static final long serialVersionUID = -1140031414;
+
     /**
      * The table <code>mybudget_appl.category</code>.
      */
     public final Category CATEGORY = Category.CATEGORY;
+
+    /**
+     * The table <code>mybudget_appl.user</code>.
+     */
+    public final User USER = User.USER;
 
     /**
      * No further instances allowed
@@ -45,6 +53,7 @@ public class MybudgetAppl extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.<Table<?>>asList(
-                Category.CATEGORY);
+                Category.CATEGORY,
+                User.USER);
     }
 }

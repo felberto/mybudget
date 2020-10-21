@@ -1,4 +1,0 @@
-    CREATE TABLE MYBUDGET_APPL.CATEGORY(
-    ID      INT     PRIMARY KEY     NOT NULL,
-    NAME    TEXT                    NOT NULL
-);

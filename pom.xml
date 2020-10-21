@@ -31,6 +31,12 @@
         <maven.compiler.source>${java.jdk.version}</maven.compiler.source>
         <maven.compiler.target>${java.jdk.version}</maven.compiler.target>
 
+        <!-- Postgresql -->
+        <postgresql.version>42.2.16</postgresql.version>
+        <!-- Jooq -->
+        <jooq.version>3.13.5</jooq.version>
+        <!-- Jsonwebtoken -->
+        <jsonwebtoken.version>0.9.1</jsonwebtoken.version>
         <!-- Swagger -->
         <swagger.version>2.9.2</swagger.version>
     </properties>

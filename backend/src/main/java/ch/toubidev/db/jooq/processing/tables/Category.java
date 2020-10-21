@@ -22,19 +22,29 @@ import java.util.List;
 @SuppressWarnings({"all", "unchecked", "rawtypes"})
 public class Category extends TableImpl<CategoryRecord> {
 
+    private static final long serialVersionUID = -1168122810;
+
     /**
      * The reference instance of <code>mybudget_appl.category</code>
      */
     public static final Category CATEGORY = new Category();
-    private static final long serialVersionUID = -1970309441;
+    /**
+     * The column <code>mybudget_appl.category.name</code>.
+     */
+    public final TableField<CategoryRecord, String> NAME = createField(DSL.name("name"), org.jooq.impl.SQLDataType.VARCHAR(100).nullable(false), this, "");
+
     /**
      * The column <code>mybudget_appl.category.id</code>.
      */
     public final TableField<CategoryRecord, Integer> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+
     /**
-     * The column <code>mybudget_appl.category.name</code>.
+     * The class holding records for this type
      */
-    public final TableField<CategoryRecord, String> NAME = createField(DSL.name("name"), org.jooq.impl.SQLDataType.CLOB.nullable(false), this, "");
+    @Override
+    public Class<CategoryRecord> getRecordType() {
+        return CategoryRecord.class;
+    }
 
     /**
      * Create a <code>mybudget_appl.category</code> table reference
@@ -67,14 +77,6 @@ public class Category extends TableImpl<CategoryRecord> {
 
     public <O extends Record> Category(Table<O> child, ForeignKey<O, CategoryRecord> key) {
         super(child, key, CATEGORY);
-    }
-
-    /**
-     * The class holding records for this type
-     */
-    @Override
-    public Class<CategoryRecord> getRecordType() {
-        return CategoryRecord.class;
     }
 
     @Override

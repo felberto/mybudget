@@ -5,6 +5,7 @@ package ch.toubidev.db.jooq.processing;
 
 
 import ch.toubidev.db.jooq.processing.tables.Category;
+import ch.toubidev.db.jooq.processing.tables.User;
 
 
 /**
@@ -17,4 +18,9 @@ public class Tables {
      * The table <code>mybudget_appl.category</code>.
      */
     public static final Category CATEGORY = Category.CATEGORY;
+
+    /**
+     * The table <code>mybudget_appl.user</code>.
+     */
+    public static final User USER = User.USER;
 }

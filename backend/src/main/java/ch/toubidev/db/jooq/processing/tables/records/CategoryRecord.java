@@ -28,6 +28,13 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> implemen
     }
 
     /**
+     * Getter for <code>mybudget_appl.category.id</code>.
+     */
+    public Integer getId() {
+        return (Integer) get(0);
+    }
+
+    /**
      * Create a detached, initialised CategoryRecord
      */
     public CategoryRecord(Integer id, String name) {
@@ -38,24 +45,6 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> implemen
     }
 
     /**
-     * Getter for <code>mybudget_appl.category.id</code>.
-     */
-    public Integer getId() {
-        return (Integer) get(0);
-    }
-
-    /**
-     * Setter for <code>mybudget_appl.category.id</code>.
-     */
-    public void setId(Integer value) {
-        set(0, value);
-    }
-
-    // -------------------------------------------------------------------------
-    // Primary key information
-    // -------------------------------------------------------------------------
-
-    /**
      * Getter for <code>mybudget_appl.category.name</code>.
      */
     public String getName() {
@@ -63,20 +52,17 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> implemen
     }
 
     // -------------------------------------------------------------------------
-    // Record2 type implementation
+    // Primary key information
     // -------------------------------------------------------------------------
-
-    /**
-     * Setter for <code>mybudget_appl.category.name</code>.
-     */
-    public void setName(String value) {
-        set(1, value);
-    }
 
     @Override
     public Record1<Integer> key() {
         return (Record1) super.key();
     }
+
+    // -------------------------------------------------------------------------
+    // Record2 type implementation
+    // -------------------------------------------------------------------------
 
     @Override
     public Row2<Integer, String> fieldsRow() {
@@ -124,10 +110,6 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> implemen
         return this;
     }
 
-    // -------------------------------------------------------------------------
-    // Constructors
-    // -------------------------------------------------------------------------
-
     @Override
     public CategoryRecord value2(String value) {
         setName(value);
@@ -139,5 +121,23 @@ public class CategoryRecord extends UpdatableRecordImpl<CategoryRecord> implemen
         value1(value1);
         value2(value2);
         return this;
+    }
+
+    // -------------------------------------------------------------------------
+    // Constructors
+    // -------------------------------------------------------------------------
+
+    /**
+     * Setter for <code>mybudget_appl.category.id</code>.
+     */
+    public void setId(Integer value) {
+        set(0, value);
+    }
+
+    /**
+     * Setter for <code>mybudget_appl.category.name</code>.
+     */
+    public void setName(String value) {
+        set(1, value);
     }
 }
