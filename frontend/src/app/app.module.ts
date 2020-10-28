@@ -10,7 +10,6 @@ import {ProfileComponent} from './profile/profile.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from '@angular/common/http';
 import {authInterceptorProviders} from './_helpers/auth.interceptor';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AuthGuardService} from "./_guards/auth-guard.service";
 
 @NgModule({
@@ -25,8 +24,7 @@ import {AuthGuardService} from "./_guards/auth-guard.service";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    NgbModule
+    HttpClientModule
   ],
   providers: [authInterceptorProviders, AuthGuardService],
   bootstrap: [AppComponent]
