@@ -22,10 +22,10 @@ spring:
 
 mybudget:
   build:
-    artifactId: "${project.artifactId}"
-    version: "${project.version}"
-    timestamp: "${timestamp}"
-    gitCommit: "${buildNumber}"
+    artifactId: "@project.artifactId@"
+    version: "@project.version@"
+    timestamp: "@timestamp@"
+    gitCommit: "@buildNumber@"
   app:
     #todo hide secret key, environment variable
     jwtSecret: appSecretKey

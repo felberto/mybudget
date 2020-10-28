@@ -70,6 +70,9 @@ public class AuthResource extends BaseRestController {
                     .body(new MessageResponse("Error: Username is already taken!"));
         }
 
+        //TODO jOOQ; SQL [insert into "mybudget_appl"."user" ("username", "password") values (?, ?) returning "mybudget_appl"."user"."id"]; FEHLER: Wert zu lang für Typ character varying(50);
+        // nested exception is org.postgresql.util.PSQLException: FEHLER: Wert zu lang für Typ character varying(50)
+
         // Create new user's account
         UserRecord userRecord = jooq.newRecord(USER);
         userRecord.setUsername(signUpRequest.getUsername());
