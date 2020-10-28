@@ -9,7 +9,6 @@ import ch.toubidev.backend.rest.MyBudgetApi;
 import ch.toubidev.backend.security.jwt.JwtUtils;
 import ch.toubidev.backend.security.service.UserDetailsImpl;
 import ch.toubidev.db.jooq.processing.tables.records.UserRecord;
-import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +43,6 @@ public class AuthResource extends BaseRestController {
     @Autowired
     JwtUtils jwtUtils;
 
-    @ApiOperation(value = "signin user")
     @RequestMapping(path = "signin", method = {RequestMethod.POST}, produces = {MyBudgetApi.MEDIA_TYPE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
 
@@ -61,7 +59,6 @@ public class AuthResource extends BaseRestController {
                 userDetails.getUsername()));
     }
 
-    @ApiOperation(value = "signup user")
     @RequestMapping(path = "signup", method = {RequestMethod.POST}, produces = {MyBudgetApi.MEDIA_TYPE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> registerUser(@RequestBody SignupRequest signUpRequest) {
         if (jooq.fetchExists(jooq.selectFrom(USER).where(USER.USERNAME.eq(signUpRequest.getUsername())))) {
