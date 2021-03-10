@@ -28,15 +28,6 @@ public class Category extends TableImpl<CategoryRecord> {
      * The reference instance of <code>mybudget_appl.category</code>
      */
     public static final Category CATEGORY = new Category();
-    /**
-     * The column <code>mybudget_appl.category.name</code>.
-     */
-    public final TableField<CategoryRecord, String> NAME = createField(DSL.name("name"), org.jooq.impl.SQLDataType.VARCHAR(100).nullable(false), this, "");
-
-    /**
-     * The column <code>mybudget_appl.category.id</code>.
-     */
-    public final TableField<CategoryRecord, Integer> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
      * The class holding records for this type
@@ -45,6 +36,16 @@ public class Category extends TableImpl<CategoryRecord> {
     public Class<CategoryRecord> getRecordType() {
         return CategoryRecord.class;
     }
+
+    /**
+     * The column <code>mybudget_appl.category.id</code>.
+     */
+    public final TableField<CategoryRecord, Integer> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+
+    /**
+     * The column <code>mybudget_appl.category.name</code>.
+     */
+    public final TableField<CategoryRecord, String> NAME = createField(DSL.name("name"), org.jooq.impl.SQLDataType.VARCHAR(100).nullable(false), this, "");
 
     /**
      * Create a <code>mybudget_appl.category</code> table reference

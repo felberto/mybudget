@@ -22,15 +22,21 @@ import java.util.List;
 @SuppressWarnings({"all", "unchecked", "rawtypes"})
 public class User extends TableImpl<UserRecord> {
 
+    private static final long serialVersionUID = 114099821;
+
     /**
      * The reference instance of <code>mybudget_appl.user</code>
      */
     public static final User USER = new User();
-    private static final long serialVersionUID = -769688376;
     /**
      * The column <code>mybudget_appl.user.id</code>.
      */
-    public final TableField<UserRecord, Integer> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<UserRecord, Integer> ID = createField(DSL.name("id"), org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('user_id_seq'::regclass)", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+    /**
+     * The column <code>mybudget_appl.user.email</code>.
+     */
+    public final TableField<UserRecord, String> EMAIL = createField(DSL.name("email"), org.jooq.impl.SQLDataType.VARCHAR(150).nullable(false), this, "");
+
     /**
      * The column <code>mybudget_appl.user.username</code>.
      */
@@ -38,7 +44,15 @@ public class User extends TableImpl<UserRecord> {
     /**
      * The column <code>mybudget_appl.user.password</code>.
      */
-    public final TableField<UserRecord, String> PASSWORD = createField(DSL.name("password"), org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false), this, "");
+    public final TableField<UserRecord, String> PASSWORD = createField(DSL.name("password"), org.jooq.impl.SQLDataType.VARCHAR(200).nullable(false), this, "");
+
+    /**
+     * The class holding records for this type
+     */
+    @Override
+    public Class<UserRecord> getRecordType() {
+        return UserRecord.class;
+    }
 
     /**
      * Create a <code>mybudget_appl.user</code> table reference
@@ -73,17 +87,14 @@ public class User extends TableImpl<UserRecord> {
         super(child, key, USER);
     }
 
-    /**
-     * The class holding records for this type
-     */
-    @Override
-    public Class<UserRecord> getRecordType() {
-        return UserRecord.class;
-    }
-
     @Override
     public Schema getSchema() {
         return MybudgetAppl.MYBUDGET_APPL;
+    }
+
+    @Override
+    public Identity<UserRecord, Integer> getIdentity() {
+        return Keys.IDENTITY_USER;
     }
 
     @Override
@@ -123,11 +134,11 @@ public class User extends TableImpl<UserRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row3 type methods
+    // Row4 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row3<Integer, String, String> fieldsRow() {
-        return (Row3) super.fieldsRow();
+    public Row4<Integer, String, String, String> fieldsRow() {
+        return (Row4) super.fieldsRow();
     }
 }

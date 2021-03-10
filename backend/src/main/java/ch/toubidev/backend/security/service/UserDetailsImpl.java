@@ -1,6 +1,7 @@
 package ch.toubidev.backend.security.service;
 
 import ch.toubidev.backend.model.auth.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -13,11 +14,15 @@ public class UserDetailsImpl implements UserDetails {
 
     private String username;
 
+    private String email;
+
+    @JsonIgnore
     private String password;
 
-    public UserDetailsImpl(Long id, String username, String password) {
+    public UserDetailsImpl(Long id, String username, String email, String password) {
         this.id = id;
         this.username = username;
+        this.email = email;
         this.password = password;
     }
 
@@ -25,6 +30,7 @@ public class UserDetailsImpl implements UserDetails {
         return new UserDetailsImpl(
                 user.getId(),
                 user.getUsername(),
+                user.getEmail(),
                 user.getPassword());
     }
 
@@ -45,6 +51,10 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public String getUsername() {
         return username;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     @Override

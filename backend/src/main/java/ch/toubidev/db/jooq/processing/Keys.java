@@ -8,6 +8,7 @@ import ch.toubidev.db.jooq.processing.tables.Category;
 import ch.toubidev.db.jooq.processing.tables.User;
 import ch.toubidev.db.jooq.processing.tables.records.CategoryRecord;
 import ch.toubidev.db.jooq.processing.tables.records.UserRecord;
+import org.jooq.Identity;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.Internal;
@@ -24,6 +25,7 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
+    public static final Identity<UserRecord, Integer> IDENTITY_USER = Identities0.IDENTITY_USER;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
@@ -40,6 +42,10 @@ public class Keys {
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
     // -------------------------------------------------------------------------
+
+    private static class Identities0 {
+        public static Identity<UserRecord, Integer> IDENTITY_USER = Internal.createIdentity(User.USER, User.USER.ID);
+    }
 
     private static class UniqueKeys0 {
         public static final UniqueKey<CategoryRecord> CATEGORY_PKEY = Internal.createUniqueKey(Category.CATEGORY, "category_pkey", new TableField[]{Category.CATEGORY.ID}, true);

@@ -7,6 +7,7 @@ package ch.toubidev.db.jooq.processing;
 import ch.toubidev.db.jooq.processing.tables.Category;
 import ch.toubidev.db.jooq.processing.tables.User;
 import org.jooq.Catalog;
+import org.jooq.Sequence;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
 
@@ -20,7 +21,7 @@ import java.util.List;
 @SuppressWarnings({"all", "unchecked", "rawtypes"})
 public class MybudgetAppl extends SchemaImpl {
 
-    private static final long serialVersionUID = 1748488532;
+    private static final long serialVersionUID = 620073323;
 
     /**
      * The reference instance of <code>mybudget_appl</code>
@@ -48,6 +49,12 @@ public class MybudgetAppl extends SchemaImpl {
     @Override
     public Catalog getCatalog() {
         return DefaultCatalog.DEFAULT_CATALOG;
+    }
+
+    @Override
+    public final List<Sequence<?>> getSequences() {
+        return Arrays.<Sequence<?>>asList(
+                Sequences.USER_ID_SEQ);
     }
 
     @Override

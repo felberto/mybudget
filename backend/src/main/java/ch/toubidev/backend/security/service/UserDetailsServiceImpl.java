@@ -16,8 +16,12 @@ public class UserDetailsServiceImpl extends BaseRestController implements UserDe
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = jooq.selectOne().from(USER).where(USER.USERNAME.eq(username)).fetchOneInto(User.class);
+        if (jooq.selectOne().from(USER).where(USER.USERNAME.eq(username)).execute() == 1) {
+            User user = jooq.selectFrom(USER).where(USER.USERNAME.eq(username)).fetchOneInto(User.class);
 
-        return UserDetailsImpl.build(user);
+            return UserDetailsImpl.build(user);
+        } else {
+            throw new UsernameNotFoundException(username);
+        }
     }
 }
